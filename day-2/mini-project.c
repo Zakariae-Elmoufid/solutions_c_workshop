@@ -1,5 +1,8 @@
 #include<stdio.h>
+<<<<<<< HEAD
 #include<string.h>
+=======
+>>>>>>> be1e924af9eda349961368791cc7ffe7d8b8c4b7
 #define liver 20
 
 char titres[liver][50];
@@ -7,20 +10,31 @@ char auteurs[liver][50];
 float prix[liver];
 int quantites[liver];
 int counter = 0 ;
+<<<<<<< HEAD
 int repeter = 1;
 
 void Ajouter(){
     printf("saisir le nomber du liver ce que vous-voulez : ");
     scanf("%d",&counter);
+=======
+
+void Ajouter(){
+>>>>>>> be1e924af9eda349961368791cc7ffe7d8b8c4b7
   int i ;
   for(i=0;i<counter;i++){
     printf("saisiz le titre du livre %d : ",i+1);
     scanf(" %s",titres[i]);
     printf("saisir l'auteur du livre: ");
     scanf(" %s",auteurs[i]);
+<<<<<<< HEAD
     printf("saisir le prix du livre: ");
     scanf("%f", &prix[i]);
     printf("saisir la quantite en stock: ");
+=======
+    printf("Entrez le prix du livre: ");
+    scanf("%f", &prix[i]);
+    printf("Entrez la quantite en stock: ");
+>>>>>>> be1e924af9eda349961368791cc7ffe7d8b8c4b7
     scanf("%d", &quantites[i]);
     printf("  ------------- \n");
   }
@@ -40,6 +54,7 @@ void Afficher(){
   }
 }
 
+<<<<<<< HEAD
 void Rechercher() {
   char titreRech[50];
   int i;
@@ -180,6 +195,13 @@ int main() {
    }
    }
 
+=======
+int main() {
+    printf("saisir le nomber du liver ce que vous-voulez : ");
+    scanf("%d",&counter);
+    Ajouter();
+    Afficher();
+>>>>>>> be1e924af9eda349961368791cc7ffe7d8b8c4b7
 
 return 0;
 }
