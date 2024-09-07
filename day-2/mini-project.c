@@ -1,8 +1,6 @@
 #include<stdio.h>
-<<<<<<< HEAD
 #include<string.h>
-=======
->>>>>>> be1e924af9eda349961368791cc7ffe7d8b8c4b7
+// Définition de la taille maximale de la bibliothèque
 #define liver 20
 
 char titres[liver][50];
@@ -10,31 +8,25 @@ char auteurs[liver][50];
 float prix[liver];
 int quantites[liver];
 int counter = 0 ;
-<<<<<<< HEAD
-int repeter = 1;
+int repeter ;
 
+
+
+
+// Fonction pour ajouter des livres dans le stock
 void Ajouter(){
     printf("saisir le nomber du liver ce que vous-voulez : ");
     scanf("%d",&counter);
-=======
 
-void Ajouter(){
->>>>>>> be1e924af9eda349961368791cc7ffe7d8b8c4b7
   int i ;
   for(i=0;i<counter;i++){
     printf("saisiz le titre du livre %d : ",i+1);
     scanf(" %s",titres[i]);
     printf("saisir l'auteur du livre: ");
     scanf(" %s",auteurs[i]);
-<<<<<<< HEAD
     printf("saisir le prix du livre: ");
     scanf("%f", &prix[i]);
     printf("saisir la quantite en stock: ");
-=======
-    printf("Entrez le prix du livre: ");
-    scanf("%f", &prix[i]);
-    printf("Entrez la quantite en stock: ");
->>>>>>> be1e924af9eda349961368791cc7ffe7d8b8c4b7
     scanf("%d", &quantites[i]);
     printf("  ------------- \n");
   }
@@ -43,6 +35,7 @@ void Ajouter(){
     }
 }
 
+// Fonction pour afficher tous les livres disponibles
 void Afficher(){
   int i ;
   for(i=0;i<counter;i++){
@@ -53,8 +46,7 @@ void Afficher(){
     printf("  ------------- \n");
   }
 }
-
-<<<<<<< HEAD
+// Fonction pour rechercher un livre par son titre
 void Rechercher() {
   char titreRech[50];
   int i;
@@ -75,7 +67,7 @@ void Rechercher() {
  printf("Livre non trouve.\n");
 
 }
-
+// Fonction pour modifier la quantité en stock d'un livre
 void modifierQ() {
    char titreModif[50];
    int nouvelle_quanti;
@@ -90,13 +82,13 @@ void modifierQ() {
       printf("qu'est ce que la nouvelle quantite ");
       scanf("%d",&nouvelle_quanti);
       quantites[i] = nouvelle_quanti;
-       printf("Quantite mise a jour %d \n",quantites[i]);
+       printf("la nouvelle quantite est %d \n",quantites[i]);
       return;
      }
    }
 
 }
-
+// Fonction pour supprimer un livre du stock
  void Supprimer(){
   char titreSup[50];
   int i , j;
@@ -119,12 +111,12 @@ void modifierQ() {
   }
 
  }
-
+// Fonction pour afficher le nombre total de livres en stock
 void Total(){
    int i , somme ;
    somme = 0 ;
    for(i=0;i<counter;i++){
-    somme = somme + quantites[i];
+    somme += quantites[i];
    }
    printf("le nombre total de livres en stock est %d ",somme);
 }
@@ -133,7 +125,7 @@ int main() {
 
     int choix ;
     choix = 0 ;
-   while(1){
+   do{
    printf("------------menu-----------\n");
    printf("1. Ajouter un Livre au Stock.\n");
    printf("2. Afficher Tous les Livres Disponibles.\n");
@@ -143,65 +135,42 @@ int main() {
    printf("6. Afficher le Nombre Total de Livres en Stock.\n");
 
    printf("       que souhaitez vous faire\n     ");
-   scanf("%d",&choix);
+   scanf("%d",&choix);// Saisie du choix de l'utilisateur
 
+   // Exécution des fonctions selon le choix
    switch(choix){
    case 1 :
        Ajouter();
-       printf(" est ce que vous-affichez le menu (0/1) : ");
-       scanf("%d",&repeter);
-       if(repeter == 0)
-          return 0;
-
          break;
    case 2 :
        Afficher();
-       printf(" est ce que vous-affichez le menu (0/1) : ");
-       scanf("%d",&repeter);
-       if(repeter == 0)
-          return 0;
        break;
    case 3 :
     Rechercher();
-    printf(" est ce que vous-affichez le menu (0/1) : ");
-       scanf("%d",&repeter);
-       if(repeter == 0)
-          return 0;
+
     break;
    case 4:
     modifierQ();
-    printf(" est ce que vous-affichez le menu (0/1) : ");
-       scanf("%d",&repeter);
-       if(repeter == 0)
-          return 0;
     break;
    case 5 :
     Supprimer();
-    printf(" est ce que vous-affichez le menu (0/1) : ");
-       scanf("%d",&repeter);
-       if(repeter == 0)
-          return 0;
     break;
    case 6 :
     Total();
-    printf(" est ce que vous-affichez le menu (0/1) : ");
-       scanf("%d",&repeter);
-       if(repeter == 0)
-          return 0;
     break;
    default :
     printf("il n'y a pas cette le nomber sur menu");
      break;
    }
-   }
+     // Demande à l'utilisateur 1 s'il veut afficher le menu à nouveau
+    printf(" est ce que vous-affichez le menu \n");
+    printf("si vollez-vous afficher le menu ,ecrivez 1 si non 0");
+    scanf("%d",&repeter);
+       if(repeter == 0)
+          return 0;// Sortie du programme si l'utilisateur choisit 0
 
-=======
-int main() {
-    printf("saisir le nomber du liver ce que vous-voulez : ");
-    scanf("%d",&counter);
-    Ajouter();
-    Afficher();
->>>>>>> be1e924af9eda349961368791cc7ffe7d8b8c4b7
+}while(repeter != 0);
+
 
 return 0;
 }
