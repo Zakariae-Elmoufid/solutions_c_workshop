@@ -164,10 +164,10 @@ int main() {
    }
      // Demande à l'utilisateur 1 s'il veut afficher le menu à nouveau
     printf(" est ce que vous-affichez le menu \n");
-    printf("si vollez-vous afficher le menu ,ecrivez 1 si non 0");
+    printf("si vollez-vous afficher le menu ,ecrivez 1 si non 0 :");
     scanf("%d",&repeter);
-       if(repeter == 0)
-          return 0;// Sortie du programme si l'utilisateur choisit 0
+ //      if(repeter == 0)
+   //       return 0;// Sortie du programme si l'utilisateur choisit 0
 
 }while(repeter != 0);
 
