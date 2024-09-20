@@ -4,9 +4,15 @@
 
 int main(){
     int  N ,i ,j , index ;
-    int  T[10] = {10,4,10,16,9,24};
-      N =  sizeof(T) / sizeof(T[0]);
-    
+    int  T[5] = {10,4,24,16,9};
+      N =  5 ;
+      
+       for(i=0;i<N;i++){
+         printf(" %d ",T[i]);
+     }
+
+     printf("\n");
+
     for(i=1;i<N;i++){
         index = i ;
         int valuerActuelle = T[i];
@@ -17,10 +23,10 @@ int main(){
         T[index] = valuerActuelle;
        }
     
-
-    for(i=0;i<N;i++){
-        printf("%d",T[i]);
-    }
+    
+   for(i=0;i<N;i++){
+         printf(" %d ",T[i]);
+     }  
 
     return 0;
 }
