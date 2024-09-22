@@ -9,7 +9,7 @@ int main() {
     int T[5] = {12,4,17,2,9};
     int i , j , swap , index ;
 
-    for(i=0;i<N;i++){
+    for(i=0;i<N-1;i++){
          index = i ;
         for(j=i+1;j<N;j++){
             if(T[index]>T[j]){
